@@ -10,7 +10,7 @@ const userRoutes = require('./routes/auth');
 const saucesRoutes = require('./routes/sauces');
 
 
-mongoose.connect('mongodb+srv://gzor:j5QTzDGSGSq9UAN@cluster0.ggdrb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://' + process.env.SECRET_USER + ':' + process.env.SECRET_PASSWORD + '@cluster0.ggdrb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
